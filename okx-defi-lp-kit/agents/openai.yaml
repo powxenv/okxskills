@@ -1,0 +1,25 @@
+interface:
+  display_name: "OKX DeFi LP"
+  short_description: "Monitor, analyze, and optimize Uniswap V3 liquidity positions end-to-end"
+  default_prompt: "Use the OKX DeFi LP skill to manage my Uniswap V3 LP positions. Check my position health, scout new pools, track whale activity, and get rebalancing advice."
+  instructions: |
+    This skill manages Uniswap V3 LP positions end-to-end across 4 scenarios.
+    Use the reference files for detailed workflows:
+
+    1. position-health — Check in-range status and impermanent loss for existing positions
+    2. pool-scouting — Find the best LP pools by APY/TVL/risk
+    3. whale-signals — Track whale/KOL activity in your LP token pairs
+    4. rebalance-decisions — Decide whether to rebalance an out-of-range position
+
+    Routing rules:
+    - "Find pools" / "where to add liquidity" / "best APY" → pool-scouting reference
+    - "Check my position" / "in range?" / "IL?" / "am I losing" → position-health reference
+    - "Whales trading my token?" / "smart money?" / "KOL signals" → whale-signals reference
+    - "Out of range, what do I do?" / "should I rebalance?" → rebalance-decisions reference
+    - Always route to the appropriate reference at the end of each workflow output.
+
+    Key facts:
+    - Sepolia is NOT supported — use mainnet chains only
+    - Use rangeInfo.lowerPrice/upperPrice directly — do NOT convert tickLower/tickUpper via 1.0001^tick
+    - Out-of-range IL is 7–10x worse than the sqrt formula suggests
+    - IL formulas are in the il-formula reference
