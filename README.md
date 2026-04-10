@@ -7,6 +7,9 @@ Three independent agent skills for on-chain trading, automation, and Uniswap int
 Pick one:
 
 ```bash
+# Using skills.sh (https://skills.sh)
+npx skills add powxenv/okx-agent-skills
+
 # Using flins (https://flins.tech)
 npx flins add powxenv/okx-agent-skills
 ```
